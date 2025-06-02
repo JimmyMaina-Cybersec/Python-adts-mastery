@@ -20,3 +20,8 @@ p3 = Person("Alice", "24", "Nairobi")
 print(vars(p1))
 print(vars(p2))
 print(vars(p3))
+
+set_constructor = set("hello")
+set_literal = {"hello"}
+print(set_constructor)
+print(set_literal)
