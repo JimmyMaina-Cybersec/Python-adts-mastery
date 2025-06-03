@@ -27,11 +27,17 @@ print("-" * 40)
 
 
 # Unpack a iterable of type string
-transaction_log = "BSSBBS"
+transaction_log = "BSSBVBSBBSBS"
 
 try:
-    a, b, c, d, e, f = transaction_log
-    print(a)
+    for char in transaction_log:
+        transaction = char
+        if transaction == "B":
+            print("Buy")
+        elif transaction == "S":
+            print("Sell")
+        else:
+            print("Invalid character")
     print("-" * 40)
 except ValueError as e:
     print("Number of variables should match the length of sequence: ", e)
@@ -55,10 +61,11 @@ messy_data = ("MSFT", "ignore_this", 75, "also_ignore", 300.15, (2023, 5, 10))
 
 try:
     symbol, _, shares, _, price, date = messy_data
+    year, month, day = date
     print(f"Symbol: {symbol}")
     print(f"Shares: {shares}")
     print(f"Price: {price}")
-    print(f"Date: {date}")
+    print(f"Date: {year}, {month}, {day}")
     print("-" * 40)
 except ValueError as e:
     print(e)
